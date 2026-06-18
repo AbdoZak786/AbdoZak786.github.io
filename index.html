@@ -4,690 +4,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abdoali Mazhar Zakir — Software Engineer</title>
-  <meta name="description" content="Final-year Software Engineering (Honours) student at UNSW. Graph systems, cloud infrastructure, full-stack development." />
-  <!-- SEO: full name for Google indexing -->
+  <meta name="description" content="Final-year Software Engineering (Honours) student at UNSW. Full-stack development, data-intensive graph systems, and cloud architecture." />
+
+  <!-- SEO -->
   <meta name="keywords" content="Abdoali Mazhar Zakir, Software Engineer, UNSW, Sydney, Neo4j, Python, AWS, Full Stack" />
   <meta name="author" content="Abdoali Mazhar Zakir" />
   <meta property="og:title" content="Abdoali Mazhar Zakir — Software Engineer" />
-  <meta property="og:description" content="Final-year Software Engineering (Honours) student at UNSW Sydney. Graph systems, cloud, full-stack." />
+  <meta property="og:description" content="Final-year Software Engineering (Honours) student at UNSW Sydney. Full-stack, graph systems, cloud." />
   <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-    :root {
-      --bg:        #080808;
-      --surface:   #111111;
-      --surface2:  #1a1a1a;
-      --surface3:  #222222;
-      --white:     #FFFFFF;
-      --off-white: #E8E8E8;
-      --mid:       #999999;
-      --muted:     #555555;
-      --border:    rgba(255,255,255,0.08);
-      --border-md: rgba(255,255,255,0.14);
-      --mono:      'JetBrains Mono', monospace;
-      --sans:      'Inter', sans-serif;
-      --display:   'Space Grotesk', sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--off-white);
-      font-family: var(--sans);
-      font-size: 15px;
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 clamp(1.5rem, 5vw, 4rem);
-      height: 60px;
-      background: rgba(8,8,8,0.85);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-logo {
-      font-family: var(--mono);
-      font-size: 13px;
-      color: var(--white);
-      letter-spacing: 0.06em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.03em;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--white); }
-
-    .nav-resume {
-      font-family: var(--mono);
-      font-size: 11px !important;
-      color: var(--white) !important;
-      border: 1px solid rgba(255,255,255,0.3);
-      padding: 5px 14px;
-      border-radius: 4px;
-      transition: background 0.2s, border-color 0.2s !important;
-    }
-
-    .nav-resume:hover {
-      background: rgba(255,255,255,0.08) !important;
-      border-color: rgba(255,255,255,0.6) !important;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 100px clamp(1.5rem, 7vw, 6rem) 80px;
-      overflow: hidden;
-    }
-
-    #graph-canvas {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.35;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-    }
-
-    .hero-eyebrow {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--mid);
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin-bottom: 1.4rem;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 1px;
-      background: var(--mid);
-    }
-
-    h1 {
-      font-family: var(--display);
-      font-size: clamp(2.8rem, 6.5vw, 5.2rem);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      color: var(--white);
-      margin-bottom: 1.3rem;
-    }
-
-    h1 span {
-      color: var(--mid);
-    }
-
-    .hero-sub {
-      font-size: 1.05rem;
-      color: var(--mid);
-      max-width: 520px;
-      line-height: 1.75;
-      margin-bottom: 2.4rem;
-      font-weight: 300;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 0.72rem 1.5rem;
-      background: var(--white);
-      color: #000;
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 5px;
-      border: 1px solid var(--white);
-      transition: background 0.2s, transform 0.15s;
-      letter-spacing: 0.01em;
-    }
-
-    .btn-primary:hover { background: var(--off-white); transform: translateY(-1px); }
-
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 0.72rem 1.5rem;
-      background: transparent;
-      color: var(--mid);
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 500;
-      text-decoration: none;
-      border-radius: 5px;
-      border: 1px solid rgba(255,255,255,0.15);
-      transition: border-color 0.2s, color 0.2s, transform 0.15s;
-      letter-spacing: 0.01em;
-    }
-
-    .btn-ghost:hover { border-color: rgba(255,255,255,0.45); color: var(--white); transform: translateY(-1px); }
-
-    /* ── STAT STRIP ── */
-    .stats-strip {
-      display: flex;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: var(--surface);
-    }
-
-    .stat-item {
-      flex: 1;
-      padding: 1.5rem clamp(1rem, 3vw, 2.5rem);
-      border-right: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .stat-item:last-child { border-right: none; }
-
-    .stat-num {
-      font-family: var(--display);
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1;
-      display: block;
-    }
-
-    .stat-label {
-      font-family: var(--mono);
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-top: 5px;
-      display: block;
-    }
-
-    /* ── MAIN ── */
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 clamp(1.5rem, 5vw, 3rem);
-    }
-
-    section {
-      padding: 5rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    section:last-child { border-bottom: none; }
-
-    .section-label {
-      font-family: var(--mono);
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      font-family: var(--display);
-      font-size: clamp(1.7rem, 3.5vw, 2.3rem);
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: -0.025em;
-      margin-bottom: 2.5rem;
-    }
-
-    /* ── EXPERIENCE ── */
-    .exp-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.8rem 2rem;
-      position: relative;
-      overflow: hidden;
-      transition: border-color 0.25s, transform 0.2s;
-      margin-bottom: 1rem;
-    }
-
-    .exp-card:last-child { margin-bottom: 0; }
-
-    .exp-card::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 2px;
-      background: var(--white);
-      border-radius: 2px 0 0 2px;
-      opacity: 0;
-      transition: opacity 0.25s;
-    }
-
-    .exp-card:hover { border-color: rgba(255,255,255,0.22); transform: translateX(3px); }
-    .exp-card:hover::before { opacity: 1; }
-
-    .exp-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 0.3rem;
-      flex-wrap: wrap;
-    }
-
-    .exp-title {
-      font-family: var(--display);
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--white);
-    }
-
-    .exp-date {
-      font-family: var(--mono);
-      font-size: 10.5px;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-      margin-top: 3px;
-    }
-
-    .exp-company {
-      font-size: 13px;
-      color: var(--mid);
-      font-weight: 400;
-      margin-bottom: 1rem;
-    }
-
-    .exp-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.55rem;
-    }
-
-    .exp-bullets li {
-      font-size: 13.5px;
-      color: #aaaaaa;
-      padding-left: 1.2rem;
-      position: relative;
-      line-height: 1.6;
-    }
-
-    .exp-bullets li::before {
-      content: '–';
-      position: absolute;
-      left: 0;
-      color: var(--muted);
-    }
-
-    /* ── PROJECTS ── */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 1rem;
-    }
-
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem 1.7rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      transition: border-color 0.25s, background 0.25s;
-    }
-
-    .project-card:hover {
-      border-color: rgba(255,255,255,0.22);
-      background: var(--surface2);
-    }
-
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
-
-    .project-name {
-      font-family: var(--display);
-      font-size: 0.98rem;
-      font-weight: 600;
-      color: var(--white);
-    }
-
-    .project-date {
-      font-family: var(--mono);
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-      margin-top: 2px;
-    }
-
-    .project-desc {
-      font-size: 13px;
-      color: #999;
-      line-height: 1.65;
-      flex: 1;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-
-    .tag {
-      font-family: var(--mono);
-      font-size: 10px;
-      color: var(--mid);
-      background: var(--surface2);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 3px 9px;
-      border-radius: 3px;
-      letter-spacing: 0.03em;
-    }
-
-    /* ── SKILLS ── */
-    .skills-layout {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 1rem;
-    }
-
-    .skill-group {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.4rem 1.5rem;
-    }
-
-    .skill-group-label {
-      font-family: var(--mono);
-      font-size: 9.5px;
-      color: var(--muted);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .skill-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .skill-pill {
-      font-family: var(--mono);
-      font-size: 11.5px;
-      color: #aaa;
-      background: var(--surface2);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 5px 11px;
-      border-radius: 20px;
-      transition: border-color 0.2s, color 0.2s;
-      cursor: default;
-    }
-
-    .skill-pill:hover { border-color: rgba(255,255,255,0.3); color: var(--white); }
-
-    /* ── EDUCATION ── */
-    .edu-grid { display: flex; flex-direction: column; gap: 1rem; }
-
-    .edu-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      transition: border-color 0.25s;
-    }
-
-    .edu-card:hover { border-color: rgba(255,255,255,0.22); }
-
-    .edu-degree {
-      font-family: var(--display);
-      font-size: 0.98rem;
-      font-weight: 600;
-      color: var(--white);
-    }
-
-    .edu-school {
-      font-size: 13px;
-      color: var(--mid);
-      margin-top: 3px;
-    }
-
-    .edu-year {
-      font-family: var(--mono);
-      font-size: 10.5px;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-    }
-
-    /* ── EXTRA ── */
-    .extra-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
-
-    .extra-item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.2rem 1.5rem;
-      flex: 1;
-      min-width: 200px;
-      transition: border-color 0.25s;
-    }
-
-    .extra-item:hover { border-color: rgba(255,255,255,0.22); }
-
-    .extra-role {
-      font-family: var(--display);
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 3px;
-    }
-
-    .extra-org { font-size: 12.5px; color: var(--mid); }
-
-    .extra-period {
-      font-family: var(--mono);
-      font-size: 10px;
-      color: var(--muted);
-      margin-top: 5px;
-      letter-spacing: 0.04em;
-    }
-
-    /* ── RESUME CTA BANNER ── */
-    .resume-banner {
-      background: var(--surface);
-      border: 1px solid var(--border-md);
-      border-radius: 8px;
-      padding: 2rem 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-top: 4rem;
-    }
-
-    .resume-banner-text .label {
-      font-family: var(--mono);
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .resume-banner-text h3 {
-      font-family: var(--display);
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--white);
-    }
-
-    .resume-banner-text p {
-      font-size: 13px;
-      color: var(--mid);
-      margin-top: 3px;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 3.5rem clamp(1.5rem, 5vw, 3rem) 3rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .footer-name {
-      font-family: var(--display);
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.4rem;
-    }
-
-    .footer-tagline {
-      font-size: 12.5px;
-      color: var(--muted);
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      list-style: none;
-      margin-top: 1.4rem;
-    }
-
-    .footer-links a {
-      font-size: 12.5px;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--white); }
-
-    .footer-copy {
-      font-family: var(--mono);
-      font-size: 10px;
-      color: #333;
-      margin-top: 2rem;
-      letter-spacing: 0.06em;
-    }
-
-    /* ── DIVIDER ── */
-    .divider {
-      width: 100%;
-      height: 1px;
-      background: var(--border);
-      margin: 0;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .stats-strip { flex-wrap: wrap; }
-      .stat-item { min-width: 50%; }
-      .stat-item:nth-child(odd) { border-right: 1px solid var(--border); }
-      .stat-item:nth-child(even) { border-right: none; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .resume-banner { flex-direction: column; }
-      h1 { font-size: 2.5rem; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * { animation: none !important; transition: none !important; }
-    }
-
-    /* ── SCROLL REVEAL ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
+  <!-- ============================================================
+       NAV — becomes "frosted glass" via .scrolled class (see JS)
+       ============================================================ -->
+  <nav id="site-nav">
     <span class="nav-logo">AMZ.dev</span>
     <ul class="nav-links">
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#projects">My Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="https://www.linkedin.com/in/abdoali-zakir-08b739249/" target="_blank" rel="noopener" class="nav-resume">↗ Resume</a></li>
     </ul>
   </nav>
 
-  <!-- HERO -->
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
   <section class="hero" id="home">
     <canvas id="graph-canvas" aria-hidden="true"></canvas>
     <div class="hero-content">
       <p class="hero-eyebrow">Software Engineer &nbsp;·&nbsp; Sydney, AU &nbsp;·&nbsp; UNSW 2026</p>
       <h1>Abdoali<br /><span>Mazhar Zakir</span></h1>
+
+      <!-- FAANG-style 3-sentence summary -->
       <p class="hero-sub">
-Final-year Software Engineering (Honours) student at the University of New South Wales with experience building data-intensive software systems, knowledge graphs, cloud-native services, and full-stack applications. Passionate about solving complex engineering problems through scalable architecture, distributed systems, and intelligent data modeling. Skilled at transforming large, unstructured datasets into high-performance platforms that drive insight, automation, and decision-making.
+        Full-stack software engineer who has shipped production systems across the stack — from a Neo4j-backed financial crime knowledge graph processing large-scale transaction networks to a serverless AWS Amplify platform serving GPT-4o-mini-driven recommendations in real time. Built and deployed cloud-native APIs with Docker and CI/CD pipelines that cut manual workflows by 30% and lifted automated test coverage by 45%, uncovering 12+ critical input-validation bugs along the way. Currently engineering heterogeneous graph neural networks for citation-link prediction at UNSW, combining data-intensive systems design with applied machine learning at scale.
       </p>
+
       <div class="hero-ctas">
         <a href="https://www.linkedin.com/in/abdoali-zakir-08b739249/" target="_blank" rel="noopener" class="btn-primary">
           <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -705,7 +68,9 @@ Final-year Software Engineering (Honours) student at the University of New South
     </div>
   </section>
 
-  <!-- STAT STRIP -->
+  <!-- ============================================================
+       STAT STRIP
+       ============================================================ -->
   <div class="stats-strip">
     <div class="stat-item">
       <span class="stat-num">Dec '26</span>
@@ -727,7 +92,9 @@ Final-year Software Engineering (Honours) student at the University of New South
 
   <main>
 
-    <!-- EXPERIENCE -->
+    <!-- ============================================================
+         EXPERIENCE
+         ============================================================ -->
     <section id="experience">
       <p class="section-label reveal">Work Experience</p>
       <h2 class="reveal">Where I've built things</h2>
@@ -756,17 +123,19 @@ Final-year Software Engineering (Honours) student at the University of New South
           <span class="exp-date">Sep 2023 – May 2024</span>
         </div>
         <ul class="exp-bullets">
-          <li>Engineered internal web tools and automation scripts using Python, Node.js, and Git reducing manual workflows by 30%.</li>
+          <li>Engineered internal web tools and automation scripts using Python, Node.js, and Git — reducing manual workflows by 30%.</li>
           <li>Designed and maintained backend systems with Express.js and PostgreSQL in a 6-member Agile team, ensuring scalable data management.</li>
           <li>Deployed CI pipelines with GitHub Actions, improving version control efficiency and reducing integration errors.</li>
         </ul>
       </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- ============================================================
+         PROJECTS — section header updated to exactly "My Projects"
+         ============================================================ -->
     <section id="projects">
       <p class="section-label reveal">Projects</p>
-      <h2 class="reveal">Things I've shipped</h2>
+      <h2 class="reveal">My Projects</h2>
       <div class="projects-grid">
 
         <div class="project-card reveal">
@@ -827,7 +196,9 @@ Final-year Software Engineering (Honours) student at the University of New South
       </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- ============================================================
+         SKILLS
+         ============================================================ -->
     <section id="skills">
       <p class="section-label reveal">Technical Skills</p>
       <h2 class="reveal">My toolkit</h2>
@@ -879,7 +250,9 @@ Final-year Software Engineering (Honours) student at the University of New South
       </div>
     </section>
 
-    <!-- EDUCATION -->
+    <!-- ============================================================
+         EDUCATION
+         ============================================================ -->
     <section id="education">
       <p class="section-label reveal">Education</p>
       <h2 class="reveal">Academic background</h2>
@@ -901,7 +274,9 @@ Final-year Software Engineering (Honours) student at the University of New South
       </div>
     </section>
 
-    <!-- EXTRA -->
+    <!-- ============================================================
+         VOLUNTEERING / EXTRA + RESUME BANNER
+         ============================================================ -->
     <section id="extra">
       <p class="section-label reveal">Beyond Engineering</p>
       <h2 class="reveal">Volunteering & leadership</h2>
@@ -923,7 +298,6 @@ Final-year Software Engineering (Honours) student at the University of New South
         </div>
       </div>
 
-      <!-- RESUME BANNER -->
       <div class="resume-banner reveal">
         <div class="resume-banner-text">
           <div class="label">Full Resume</div>
@@ -943,7 +317,9 @@ Final-year Software Engineering (Honours) student at the University of New South
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
   <footer>
     <div class="footer-name">Abdoali Mazhar Zakir</div>
     <div class="footer-tagline">Software Engineer · UNSW Sydney · Available from December 2026</div>
@@ -957,7 +333,24 @@ Final-year Software Engineering (Honours) student at the University of New South
   </footer>
 
   <script>
-    // ── GRAPH CANVAS — monochrome version ──
+    /* ============================================================
+       1. STICKY NAV — adds .scrolled class for frosted-glass state
+       ============================================================ */
+    const nav = document.getElementById('site-nav');
+    function handleNavScroll() {
+      if (window.scrollY > 40) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', handleNavScroll, { passive: true });
+    handleNavScroll();
+
+    /* ============================================================
+       2. HERO GRAPH CANVAS — subtle animated node graph
+          (kept light-opacity so it sits quietly behind hero text)
+       ============================================================ */
     const canvas = document.getElementById('graph-canvas');
     const ctx = canvas.getContext('2d');
 
@@ -1009,40 +402,37 @@ Final-year Software Engineering (Honours) student at the University of New South
         if (n.cy < 30 || n.cy > H - 30) n.vy *= -1;
       });
 
-      // edges — white/grey
+      /* edges — maroon, very low opacity to stay subtle on light bg */
       EDGES.forEach(([a, b]) => {
         const na = nodes[a], nb = nodes[b];
-        const alpha = 0.08 + 0.07 * Math.sin(t + na.phase);
+        const alpha = 0.08 + 0.06 * Math.sin(t + na.phase);
         ctx.beginPath();
         ctx.moveTo(na.cx, na.cy);
         ctx.lineTo(nb.cx, nb.cy);
-        ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
+        ctx.strokeStyle = `rgba(110,30,30,${alpha})`;
         ctx.lineWidth = 0.8;
         ctx.stroke();
       });
 
-      // nodes
+      /* nodes */
       nodes.forEach(n => {
-        const pulse = 0.45 + 0.25 * Math.sin(t * 1.3 + n.phase);
+        const pulse = 0.4 + 0.25 * Math.sin(t * 1.3 + n.phase);
 
-        // subtle halo
         const grad = ctx.createRadialGradient(n.cx, n.cy, 0, n.cx, n.cy, 16);
-        grad.addColorStop(0, `rgba(255,255,255,${pulse * 0.12})`);
+        grad.addColorStop(0, `rgba(110,30,30,${pulse * 0.10})`);
         grad.addColorStop(1, 'transparent');
         ctx.beginPath();
         ctx.arc(n.cx, n.cy, 16, 0, Math.PI * 2);
         ctx.fillStyle = grad;
         ctx.fill();
 
-        // dot
         ctx.beginPath();
         ctx.arc(n.cx, n.cy, 3, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${pulse})`;
+        ctx.fillStyle = `rgba(110,30,30,${pulse})`;
         ctx.fill();
 
-        // label
         ctx.font = '10px JetBrains Mono, monospace';
-        ctx.fillStyle = `rgba(150,150,150,${pulse * 0.85})`;
+        ctx.fillStyle = `rgba(92,86,78,${pulse * 0.8})`;
         ctx.textAlign = 'center';
         ctx.fillText(n.label, n.cx, n.cy - 10);
       });
@@ -1058,7 +448,10 @@ Final-year Software Engineering (Honours) student at the University of New South
       canvas.style.display = 'none';
     }
 
-    // ── SCROLL REVEAL ──
+    /* ============================================================
+       3. SCROLL REVEAL — IntersectionObserver fades + slides
+          each .reveal element up into view as it enters viewport
+       ============================================================ */
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -1071,7 +464,7 @@ Final-year Software Engineering (Honours) student at the University of New South
 
     reveals.forEach(el => observer.observe(el));
 
-    // stagger grid children
+    /* stagger grid children so cards cascade in rather than pop together */
     document.querySelectorAll('.projects-grid, .skills-layout, .extra-grid').forEach(grid => {
       grid.querySelectorAll('.reveal').forEach((el, i) => {
         el.style.transitionDelay = `${i * 70}ms`;
