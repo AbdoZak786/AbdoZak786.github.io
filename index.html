@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="rE9LPIVGRgpT9TLKTNn7DPJfNUi2wRhAsJ4jvkuLj90" />
-  <title>Abdoali Mazhar Zakir — Software Engineer</title>
+  <title>Abdoali Mazhar Zakir   Software Engineer</title>
   <meta name="description" content="Software Engineer specialising in scalable data systems, ETL pipelines, graph databases, and applied ML. UNSW Honours 2026." />
 
   <!-- SEO -->
   <meta name="keywords" content="Abdoali Mazhar Zakir, Software Engineer, Data Engineer, UNSW, Sydney, Neo4j, Python, AWS, ETL, Full Stack" />
   <meta name="author" content="Abdoali Mazhar Zakir" />
-  <meta property="og:title" content="Abdoali Mazhar Zakir — Software Engineer" />
+  <meta property="og:title" content="Abdoali Mazhar Zakir   Software Engineer" />
   <meta property="og:description" content="Software Engineer specialising in scalable data systems, ETL pipelines, graph databases, and applied ML. UNSW Honours 2026." />
   <meta property="og:type" content="website" />
+
+  <!-- Apply saved theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('amz-theme');
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,17 +35,28 @@
 <body>
 
   <!-- ============================================================
-       NAV — .scrolled class applied via JS for frosted-glass effect
+       NAV   .scrolled class applied via JS for frosted-glass effect
        ============================================================ -->
   <nav id="site-nav">
     <span class="nav-logo">AMZ.dev</span>
-    <ul class="nav-links">
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">My Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="Abdoali_Zakir_Resume.pdf" target="_blank" rel="noopener" class="nav-resume">↗ Resume</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">My Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="Abdoali_Zakir_Resume.pdf" target="_blank" rel="noopener" class="nav-resume">↗ Resume</a></li>
+      </ul>
+      <!-- Theme switcher -->
+      <div class="theme-switch" role="group" aria-label="Colour theme">
+        <button class="theme-dot" data-set-theme="light" data-label="Light" aria-label="Light theme"></button>
+        <button class="theme-dot" data-set-theme="dark" data-label="Dark" aria-label="Dark theme"></button>
+        <button class="theme-dot" data-set-theme="cyberpunk" data-label="Cyberpunk" aria-label="Cyberpunk theme"></button>
+        <button class="theme-dot" data-set-theme="matrix" data-label="Matrix" aria-label="Matrix theme"></button>
+        <button class="theme-dot" data-set-theme="minimal" data-label="Minimal" aria-label="Minimal theme"></button>
+      </div>
+    </div>
   </nav>
 
   <!-- ============================================================
@@ -47,14 +68,8 @@
       <p class="hero-eyebrow">Software Engineer &nbsp;·&nbsp; Sydney, AU &nbsp;·&nbsp; UNSW 2026</p>
       <h1>Abdoali<br /><span>Mazhar Zakir</span></h1>
 
-      <!--
-        FAANG-style 3-sentence summary:
-        Sentence 1 — Who + specialisation + strongest credential
-        Sentence 2 — Shipped work with concrete metrics
-        Sentence 3 — Current high-signal work
-      -->
       <p class="hero-sub">
-        Full-stack software engineer specialising in scalable data systems and applied ML — shipping production pipelines from a Neo4j financial crime knowledge graph at TCS to an enterprise ETL platform with self-healing data quality built on Medallion Architecture. Delivered measurable impact across the stack: cut manual workflows by 30%, boosted automated test coverage by 45%, and uncovered 12+ critical vulnerabilities through systematic fuzzing. Currently driving citation-link prediction research at UNSW using heterogeneous graph neural networks, while supporting data-driven sponsorship analytics at Futures Sport & Entertainment (IPG Omnicom).
+        Full-stack software engineer specialising in scalable data systems and applied ML shipping production pipelines from a Neo4j financial crime knowledge graph at TCS to an enterprise ETL platform with self-healing data quality built on Medallion Architecture. Delivered measurable impact across the stack: cut manual workflows by 30%, boosted automated test coverage by 45%, and uncovered 12+ critical vulnerabilities through systematic fuzzing. Currently driving citation-link prediction research at UNSW using heterogeneous graph neural networks, while supporting data-driven sponsorship analytics at Futures Sport & Entertainment (IPG Omnicom).
       </p>
 
       <div class="hero-ctas">
@@ -82,7 +97,7 @@
   </section>
 
   <!-- ============================================================
-       STAT STRIP — updated to reflect new internship + Sentinel
+       STAT STRIP
        ============================================================ -->
   <div class="stats-strip">
     <div class="stat-item">
@@ -106,13 +121,12 @@
   <main>
 
     <!-- ============================================================
-         EXPERIENCE — newest first
+         EXPERIENCE   newest first
          ============================================================ -->
     <section id="experience">
       <p class="section-label reveal">Work Experience</p>
       <h2 class="reveal">Where I've built things</h2>
 
-      <!-- Futures Sport & Entertainment — NEW -->
       <div class="exp-card reveal">
         <div class="exp-header">
           <div>
@@ -127,7 +141,6 @@
         </ul>
       </div>
 
-      <!-- TCS — updated with extra bullet -->
       <div class="exp-card reveal">
         <div class="exp-header">
           <div>
@@ -144,7 +157,6 @@
         </ul>
       </div>
 
-      <!-- Enigma — retitled + updated bullets -->
       <div class="exp-card reveal">
         <div class="exp-header">
           <div>
@@ -163,14 +175,16 @@
     </section>
 
     <!-- ============================================================
-         PROJECTS — Sentinel ETL featured (full-width), rest in grid
+         PROJECTS   Sentinel ETL featured, rest in grid
+         data-tech attributes power the interactive tech graph
          ============================================================ -->
     <section id="projects">
       <p class="section-label reveal">Projects</p>
       <h2 class="reveal">My Projects</h2>
 
       <!-- ── FEATURED: Sentinel ETL ── -->
-      <div class="project-card project-featured reveal">
+      <div class="project-card project-featured reveal" id="proj-sentinel"
+           data-tech="Python,FastAPI,Next.js,TypeScript,DuckDB,PostgreSQL,Docker,GitHub Actions">
         <div class="featured-inner">
           <div class="featured-text">
             <div class="featured-eyebrow">
@@ -180,7 +194,7 @@
             <div class="project-name featured-name">Sentinel ETL</div>
             <p class="featured-tagline">Self-Healing Data Pipeline Platform</p>
             <p class="project-desc">
-              Enterprise-grade ETL platform built on Medallion Architecture (Bronze / Silver / Gold layers) — automatically ingests, validates, repairs, and transforms datasets end-to-end. The self-healing engine (Python / FastAPI) detects and remediates missing values, duplicates, schema drift, and type mismatches at runtime, with full audit logging and data lineage tracking for every transformation. A Next.js / TypeScript / Tailwind dashboard surfaces data quality scores, pipeline health, and dataset history in real time.
+              Enterprise-grade ETL platform built on Medallion Architecture (Bronze / Silver / Gold layers) automatically ingests, validates, repairs, and transforms datasets end-to-end. The self-healing engine (Python / FastAPI) detects and remediates missing values, duplicates, schema drift, and type mismatches at runtime, with full audit logging and data lineage tracking for every transformation. A Next.js / TypeScript / Tailwind dashboard surfaces data quality scores, pipeline health, and dataset history in real time.
             </p>
             <div class="project-tags featured-tags">
               <span class="tag">Python</span>
@@ -200,28 +214,21 @@
               View on GitHub ↗
             </a>
           </div>
-          <!-- Architecture diagram SVG -->
           <div class="featured-diagram" aria-hidden="true">
             <svg viewBox="0 0 260 300" xmlns="http://www.w3.org/2000/svg" fill="none">
-              <!-- Bronze layer -->
               <rect x="20" y="20" width="220" height="56" rx="6" fill="#FAF0E6" stroke="#C8956B" stroke-width="1.2"/>
               <text x="130" y="38" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#8B5E3C" letter-spacing="2">BRONZE</text>
               <text x="130" y="54" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#6E4E2A">Raw Ingest · Schema Detect</text>
-              <!-- Arrow -->
               <line x1="130" y1="76" x2="130" y2="104" stroke="#C8956B" stroke-width="1.2" stroke-dasharray="4 3"/>
               <polygon points="124,102 136,102 130,112" fill="#C8956B"/>
-              <!-- Silver layer -->
               <rect x="20" y="112" width="220" height="56" rx="6" fill="#F0F4FA" stroke="#6B8EC8" stroke-width="1.2"/>
               <text x="130" y="130" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#3C5E8B" letter-spacing="2">SILVER</text>
               <text x="130" y="146" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#2A4E6E">Validate · Self-Heal · Audit</text>
-              <!-- Arrow -->
               <line x1="130" y1="168" x2="130" y2="196" stroke="#6B8EC8" stroke-width="1.2" stroke-dasharray="4 3"/>
               <polygon points="124,194 136,194 130,204" fill="#6B8EC8"/>
-              <!-- Gold layer -->
               <rect x="20" y="204" width="220" height="56" rx="6" fill="#FAFAEA" stroke="#B8A84A" stroke-width="1.2"/>
               <text x="130" y="222" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#7A6A1A" letter-spacing="2">GOLD</text>
               <text x="130" y="238" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#5A4E1A">Transform · Dashboard · API</text>
-              <!-- Stack label -->
               <text x="130" y="288" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#8C857B" letter-spacing="1">DuckDB · FastAPI · Next.js</text>
             </svg>
           </div>
@@ -231,7 +238,7 @@
       <!-- ── REGULAR GRID ── -->
       <div class="projects-grid">
 
-        <div class="project-card reveal">
+        <div class="project-card reveal" id="proj-terracast" data-tech="Next.js,AWS,TypeScript">
           <div class="project-header">
             <div class="project-name">TerraCast</div>
             <div class="project-date">Feb – May 2026</div>
@@ -245,9 +252,9 @@
           </div>
         </div>
 
-        <div class="project-card reveal">
+        <div class="project-card reveal" id="proj-cdchgn" data-tech="Python,PyTorch,GNN,Neo4j">
           <div class="project-header">
-            <div class="project-name">Citation Prediction — CDCHGN</div>
+            <div class="project-name">Citation Prediction   CDCHGN</div>
             <div class="project-date">2026 · Thesis</div>
           </div>
           <p class="project-desc">Heterogeneous graph neural network models for academic citation link prediction using community detection, dual-clustering, and node embeddings on large-scale graph datasets.</p>
@@ -259,7 +266,7 @@
           </div>
         </div>
 
-        <div class="project-card reveal">
+        <div class="project-card reveal" id="proj-toohak" data-tech="React,Express.js,Node.js">
           <div class="project-header">
             <div class="project-name">TOOHAK</div>
             <div class="project-date">Feb – May 2025</div>
@@ -273,7 +280,7 @@
           </div>
         </div>
 
-        <div class="project-card reveal">
+        <div class="project-card reveal" id="proj-invoice" data-tech="Node.js,Express.js,PostgreSQL,Docker,AWS">
           <div class="project-header">
             <div class="project-name">Cloud Invoice Backend API</div>
             <div class="project-date">Feb – May 2025</div>
@@ -287,7 +294,7 @@
           </div>
         </div>
 
-        <div class="project-card reveal">
+        <div class="project-card reveal" id="proj-fuzzing" data-tech="Python,Pytest">
           <div class="project-header">
             <div class="project-name">Automated Testing & Fuzzing Framework</div>
             <div class="project-date">Jun – Aug 2025</div>
@@ -305,60 +312,83 @@
     </section>
 
     <!-- ============================================================
-         SKILLS — updated: Terraform fixed, Neo4j in Databases
+         SKILLS   interactive force-directed tech graph
          ============================================================ -->
     <section id="skills">
       <p class="section-label reveal">Technical Skills</p>
-      <h2 class="reveal">My toolkit</h2>
-      <div class="skills-layout">
-        <div class="skill-group reveal">
-          <div class="skill-group-label">Languages</div>
-          <div class="skill-pills">
-            <span class="skill-pill">Python</span>
-            <span class="skill-pill">JavaScript</span>
-            <span class="skill-pill">TypeScript</span>
-            <span class="skill-pill">SQL</span>
-            <span class="skill-pill">Cypher</span>
-            <span class="skill-pill">C++</span>
-            <span class="skill-pill">HTML/CSS</span>
+      <h2 class="reveal">My toolkit, as a graph</h2>
+      <p class="graph-hint reveal">Click a node to see the projects it powers. Drag nodes to rearrange.</p>
+
+      <div class="graph-wrap reveal">
+        <svg id="tech-graph" role="img" aria-label="Interactive graph of technical skills"></svg>
+        <div class="graph-bar">
+          <div class="graph-legend">
+            <span class="legend-item"><i style="background:#4A90D9"></i>Languages</span>
+            <span class="legend-item"><i style="background:#9B59B6"></i>Frameworks</span>
+            <span class="legend-item"><i style="background:#E67E22"></i>Cloud & DevOps</span>
+            <span class="legend-item"><i style="background:#27AE60"></i>Data & Graph</span>
           </div>
-        </div>
-        <div class="skill-group reveal">
-          <div class="skill-group-label">Frameworks & Libraries</div>
-          <div class="skill-pills">
-            <span class="skill-pill">Next.js</span>
-            <span class="skill-pill">React</span>
-            <span class="skill-pill">FastAPI</span>
-            <span class="skill-pill">Node.js</span>
-            <span class="skill-pill">Express.js</span>
-            <span class="skill-pill">PyTorch</span>
-            <span class="skill-pill">Pandas</span>
-            <span class="skill-pill">Jest</span>
-            <span class="skill-pill">Pytest</span>
-          </div>
-        </div>
-        <div class="skill-group reveal">
-          <div class="skill-group-label">Cloud & DevOps</div>
-          <div class="skill-pills">
-            <span class="skill-pill">AWS</span>
-            <span class="skill-pill">Docker</span>
-            <span class="skill-pill">GitHub Actions</span>
-            <span class="skill-pill">CI/CD</span>
-            <span class="skill-pill">Terraform</span>
-          </div>
-        </div>
-        <div class="skill-group reveal">
-          <div class="skill-group-label">Data & Graph</div>
-          <div class="skill-pills">
-            <span class="skill-pill">Neo4j</span>
-            <span class="skill-pill">PostgreSQL</span>
-            <span class="skill-pill">DuckDB</span>
-            <span class="skill-pill">MySQL</span>
-            <span class="skill-pill">GNN</span>
-            <span class="skill-pill">ETL Pipelines</span>
+          <div class="graph-result" id="graph-result">
+            <span class="graph-result-chip" id="graph-result-chip"></span>
+            <a href="#projects" class="graph-clear" style="text-decoration:none;">View projects ↑</a>
+            <button class="graph-clear" id="graph-clear">Clear</button>
           </div>
         </div>
       </div>
+
+      <!-- Plain list fallback for skimmers -->
+      <details class="skills-plain reveal">
+        <summary>Prefer a plain list?</summary>
+        <div class="skills-layout">
+          <div class="skill-group">
+            <div class="skill-group-label">Languages</div>
+            <div class="skill-pills">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">TypeScript</span>
+              <span class="skill-pill">SQL</span>
+              <span class="skill-pill">Cypher</span>
+              <span class="skill-pill">C++</span>
+              <span class="skill-pill">HTML/CSS</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">Frameworks & Libraries</div>
+            <div class="skill-pills">
+              <span class="skill-pill">Next.js</span>
+              <span class="skill-pill">React</span>
+              <span class="skill-pill">FastAPI</span>
+              <span class="skill-pill">Node.js</span>
+              <span class="skill-pill">Express.js</span>
+              <span class="skill-pill">PyTorch</span>
+              <span class="skill-pill">Pandas</span>
+              <span class="skill-pill">Jest</span>
+              <span class="skill-pill">Pytest</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">Cloud & DevOps</div>
+            <div class="skill-pills">
+              <span class="skill-pill">AWS</span>
+              <span class="skill-pill">Docker</span>
+              <span class="skill-pill">GitHub Actions</span>
+              <span class="skill-pill">CI/CD</span>
+              <span class="skill-pill">Terraform</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">Data & Graph</div>
+            <div class="skill-pills">
+              <span class="skill-pill">Neo4j</span>
+              <span class="skill-pill">PostgreSQL</span>
+              <span class="skill-pill">DuckDB</span>
+              <span class="skill-pill">MySQL</span>
+              <span class="skill-pill">GNN</span>
+              <span class="skill-pill">ETL Pipelines</span>
+            </div>
+          </div>
+        </div>
+      </details>
     </section>
 
     <!-- ============================================================
@@ -370,14 +400,14 @@
       <div class="edu-grid">
         <div class="edu-card reveal">
           <div>
-            <div class="edu-degree">Bachelor of Engineering (Honours) — Software Engineering</div>
+            <div class="edu-degree">Bachelor of Engineering (Honours)   Software Engineering</div>
             <div class="edu-school">University of New South Wales (UNSW), Sydney</div>
           </div>
           <span class="edu-year">Sep 2024 – Dec 2026</span>
         </div>
         <div class="edu-card reveal">
           <div>
-            <div class="edu-degree">Bachelor of Science — Computer Science & Engineering</div>
+            <div class="edu-degree">Bachelor of Science   Computer Science & Engineering</div>
             <div class="edu-school">International Centre for Applied Sciences, Manipal University</div>
           </div>
           <span class="edu-year">Jul 2022 – May 2024</span>
@@ -413,7 +443,7 @@
         <div class="resume-banner-text">
           <div class="label">Full Resume</div>
           <h3>Want the full picture?</h3>
-          <p>View or download my complete resume — experience, projects, and skills in one document.</p>
+          <p>View or download my complete resume   experience, projects, and skills in one document.</p>
         </div>
         <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
           <a href="Abdoali_Zakir_Resume.pdf" target="_blank" rel="noopener" class="btn-primary">
@@ -423,6 +453,34 @@
             Download ↓
           </a>
         </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT   closing conversation
+         ============================================================ -->
+    <section id="contact">
+      <div class="contact-panel reveal">
+        <p class="section-label">Let's Talk</p>
+        <h2>Interested in building <span>something together?</span></h2>
+        <p class="contact-sub">
+          Whether it's AI, backend engineering, or scalable systems  
+          I'd love to chat.
+        </p>
+        <div class="contact-ctas">
+          <a href="mailto:abdoali30112004@gmail.com" class="btn-primary">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,12 2,6"/>
+            </svg>
+            Email me
+          </a>
+          <a href="https://www.linkedin.com/in/abdoali-zakir-08b739249/" target="_blank" rel="noopener" class="btn-ghost">LinkedIn</a>
+          <a href="https://github.com/abdoali-zakir" target="_blank" rel="noopener" class="btn-ghost">GitHub</a>
+        </div>
+        <p class="contact-email-line">
+          Or write to <a href="mailto:abdoali30112004@gmail.com">abdoali30112004@gmail.com</a>   I reply fast.
+        </p>
       </div>
     </section>
 
@@ -445,7 +503,44 @@
 
   <script>
     /* ============================================================
-       1. STICKY NAV — frosted-glass effect on scroll
+       0. THEME SWITCHER
+       - data-theme on <html>; persisted in localStorage
+       - brief .theme-fade class gives the smooth cross-fade
+       ============================================================ */
+    const THEME_KEY = 'amz-theme';
+    const rootEl = document.documentElement;
+    const themeDots = document.querySelectorAll('.theme-dot');
+
+    function themeAccentRGB() {
+      // used by canvas + tech graph so they always match the theme
+      const v = getComputedStyle(rootEl).getPropertyValue('--graph-rgb').trim();
+      return v || '110,30,30';
+    }
+    function themeLabelRGB() {
+      const v = getComputedStyle(rootEl).getPropertyValue('--label-rgb').trim();
+      return v || '92,86,78';
+    }
+
+    function markActiveDot() {
+      const current = rootEl.dataset.theme || 'light';
+      themeDots.forEach(d =>
+        d.classList.toggle('active', d.dataset.setTheme === current));
+    }
+
+    themeDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        rootEl.classList.add('theme-fade');
+        rootEl.dataset.theme = dot.dataset.setTheme;
+        try { localStorage.setItem(THEME_KEY, dot.dataset.setTheme); } catch (e) {}
+        markActiveDot();
+        // colours read live inside the animation loops, so nothing else to do
+        setTimeout(() => rootEl.classList.remove('theme-fade'), 550);
+      });
+    });
+    markActiveDot();
+
+    /* ============================================================
+       1. STICKY NAV   frosted-glass effect on scroll
        ============================================================ */
     const nav = document.getElementById('site-nav');
     function handleNavScroll() {
@@ -455,12 +550,12 @@
     handleNavScroll();
 
     /* ============================================================
-       2. HERO GRAPH CANVAS
+       2. HERO GRAPH CANVAS   colours follow the active theme
        ============================================================ */
     const canvas = document.getElementById('graph-canvas');
     const ctx = canvas.getContext('2d');
 
-    const NODES = [
+    const HERO_NODES = [
       { label: 'Neo4j',      x: 0.15, y: 0.28 },
       { label: 'Python',     x: 0.34, y: 0.16 },
       { label: 'AWS',        x: 0.62, y: 0.22 },
@@ -474,73 +569,326 @@
       { label: 'GNN',        x: 0.09, y: 0.80 },
     ];
 
-    const EDGES = [
+    const HERO_EDGES = [
       [0,3],[0,1],[1,2],[1,4],[2,5],[2,9],[3,6],[4,5],[4,7],[5,6],[6,8],[7,8],[9,4],[10,0],[10,7]
     ];
 
-    let nodes = [];
+    let heroNodes = [];
     let t = 0;
 
-    function resize() {
+    function heroResize() {
       canvas.width  = canvas.offsetWidth  * devicePixelRatio;
       canvas.height = canvas.offsetHeight * devicePixelRatio;
-      ctx.scale(devicePixelRatio, devicePixelRatio);
-      nodes = NODES.map((n, i) => ({
+      ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+      heroNodes = HERO_NODES.map((n, i) => ({
         ...n,
         cx: n.x * canvas.offsetWidth,
         cy: n.y * canvas.offsetHeight,
-        phase: (i / NODES.length) * Math.PI * 2,
+        phase: (i / HERO_NODES.length) * Math.PI * 2,
         vx: (Math.random() - 0.5) * 0.25,
         vy: (Math.random() - 0.5) * 0.18,
       }));
     }
 
-    function draw() {
+    function heroDraw() {
       const W = canvas.offsetWidth, H = canvas.offsetHeight;
+      const accent = themeAccentRGB();
+      const label  = themeLabelRGB();
       ctx.clearRect(0, 0, W, H);
       t += 0.007;
-      nodes.forEach(n => {
+      heroNodes.forEach(n => {
         n.cx += n.vx; n.cy += n.vy;
         if (n.cx < 50 || n.cx > W - 50) n.vx *= -1;
         if (n.cy < 30 || n.cy > H - 30) n.vy *= -1;
       });
-      EDGES.forEach(([a, b]) => {
-        const na = nodes[a], nb = nodes[b];
+      HERO_EDGES.forEach(([a, b]) => {
+        const na = heroNodes[a], nb = heroNodes[b];
         const alpha = 0.08 + 0.06 * Math.sin(t + na.phase);
         ctx.beginPath();
         ctx.moveTo(na.cx, na.cy);
         ctx.lineTo(nb.cx, nb.cy);
-        ctx.strokeStyle = `rgba(110,30,30,${alpha})`;
+        ctx.strokeStyle = `rgba(${accent},${alpha})`;
         ctx.lineWidth = 0.8;
         ctx.stroke();
       });
-      nodes.forEach(n => {
+      heroNodes.forEach(n => {
         const pulse = 0.4 + 0.25 * Math.sin(t * 1.3 + n.phase);
         const grad = ctx.createRadialGradient(n.cx, n.cy, 0, n.cx, n.cy, 16);
-        grad.addColorStop(0, `rgba(110,30,30,${pulse * 0.10})`);
+        grad.addColorStop(0, `rgba(${accent},${pulse * 0.10})`);
         grad.addColorStop(1, 'transparent');
         ctx.beginPath(); ctx.arc(n.cx, n.cy, 16, 0, Math.PI * 2);
         ctx.fillStyle = grad; ctx.fill();
         ctx.beginPath(); ctx.arc(n.cx, n.cy, 3, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(110,30,30,${pulse})`; ctx.fill();
+        ctx.fillStyle = `rgba(${accent},${pulse})`; ctx.fill();
         ctx.font = '10px JetBrains Mono, monospace';
-        ctx.fillStyle = `rgba(92,86,78,${pulse * 0.8})`;
+        ctx.fillStyle = `rgba(${label},${pulse * 0.8})`;
         ctx.textAlign = 'center';
         ctx.fillText(n.label, n.cx, n.cy - 10);
       });
-      requestAnimationFrame(draw);
+      requestAnimationFrame(heroDraw);
     }
 
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      resize();
-      window.addEventListener('resize', resize);
-      draw();
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!reducedMotion) {
+      heroResize();
+      window.addEventListener('resize', heroResize);
+      heroDraw();
     } else {
       canvas.style.display = 'none';
     }
 
     /* ============================================================
-       3. SCROLL REVEAL
+       3. INTERACTIVE TECH STACK   force-directed graph
+       - repulsion + spring physics, drag to rearrange
+       - click a node -> highlights projects using that tech
+       ============================================================ */
+    const CAT_COLORS = {
+      lang:  '#4A90D9',
+      fw:    '#9B59B6',
+      cloud: '#E67E22',
+      data:  '#27AE60',
+    };
+
+    // name, category   must match the tokens in each card's data-tech
+    const TECHS = [
+      { name: 'Python',         cat: 'lang'  },
+      { name: 'TypeScript',     cat: 'lang'  },
+      { name: 'FastAPI',        cat: 'fw'    },
+      { name: 'Next.js',        cat: 'fw'    },
+      { name: 'React',          cat: 'fw'    },
+      { name: 'Express.js',     cat: 'fw'    },
+      { name: 'Node.js',        cat: 'fw'    },
+      { name: 'PyTorch',        cat: 'fw'    },
+      { name: 'Pytest',         cat: 'fw'    },
+      { name: 'AWS',            cat: 'cloud' },
+      { name: 'Docker',         cat: 'cloud' },
+      { name: 'GitHub Actions', cat: 'cloud' },
+      { name: 'PostgreSQL',     cat: 'data'  },
+      { name: 'DuckDB',         cat: 'data'  },
+      { name: 'Neo4j',          cat: 'data'  },
+      { name: 'GNN',            cat: 'data'  },
+    ];
+
+    // "flows" between tools   the shape of a real stack
+    const TECH_EDGES = [
+      ['Python','FastAPI'], ['Python','PyTorch'], ['Python','Pytest'], ['Python','DuckDB'],
+      ['PyTorch','GNN'], ['GNN','Neo4j'],
+      ['FastAPI','Docker'], ['FastAPI','DuckDB'],
+      ['Docker','AWS'], ['Docker','PostgreSQL'], ['Docker','GitHub Actions'],
+      ['AWS','GitHub Actions'],
+      ['Next.js','TypeScript'], ['Next.js','React'], ['Next.js','AWS'],
+      ['React','Express.js'], ['Express.js','Node.js'], ['Node.js','TypeScript'],
+      ['Express.js','PostgreSQL'],
+    ];
+
+    const svg = document.getElementById('tech-graph');
+    const SVG_NS = 'http://www.w3.org/2000/svg';
+    const resultBar  = document.getElementById('graph-result');
+    const resultChip = document.getElementById('graph-result-chip');
+    const clearBtn   = document.getElementById('graph-clear');
+    const projectCards = Array.from(document.querySelectorAll('[data-tech]'));
+
+    let gNodes = [], gEdges = [], gW = 0, gH = 0;
+    let selected = null, dragging = null, graphVisible = false;
+
+    function graphInit() {
+      svg.innerHTML = '';
+      gW = svg.clientWidth;
+      gH = svg.clientHeight;
+
+      gNodes = TECHS.map((tch, i) => {
+        const angle = (i / TECHS.length) * Math.PI * 2;
+        return {
+          ...tch,
+          x: gW / 2 + Math.cos(angle) * gW * 0.28,
+          y: gH / 2 + Math.sin(angle) * gH * 0.30,
+          vx: 0, vy: 0,
+          r: 12 + Math.min(10, projectsUsing(tch.name).length * 3),
+        };
+      });
+
+      const byName = Object.fromEntries(gNodes.map(n => [n.name, n]));
+      gEdges = TECH_EDGES.map(([a, b]) => ({ a: byName[a], b: byName[b] }));
+
+      // edges first so nodes render on top
+      gEdges.forEach(e => {
+        e.el = document.createElementNS(SVG_NS, 'line');
+        e.el.setAttribute('class', 'graph-edge');
+        svg.appendChild(e.el);
+      });
+
+      gNodes.forEach(n => {
+        const g = document.createElementNS(SVG_NS, 'g');
+        g.setAttribute('class', 'graph-node');
+        g.setAttribute('tabindex', '0');
+        g.setAttribute('role', 'button');
+        g.setAttribute('aria-label', n.name + '   show related projects');
+
+        const ring = document.createElementNS(SVG_NS, 'circle');
+        ring.setAttribute('class', 'cat-ring');
+        ring.setAttribute('r', n.r + 3);
+        ring.setAttribute('stroke', CAT_COLORS[n.cat]);
+
+        const c = document.createElementNS(SVG_NS, 'circle');
+        c.setAttribute('r', n.r);
+
+        const label = document.createElementNS(SVG_NS, 'text');
+        label.textContent = n.name;
+        label.setAttribute('dy', -(n.r + 9));
+
+        g.appendChild(ring); g.appendChild(c); g.appendChild(label);
+        svg.appendChild(g);
+        n.el = g;
+
+        g.addEventListener('click', () => {
+          if (n.wasDragged) { n.wasDragged = false; return; }
+          selectTech(selected === n.name ? null : n.name);
+        });
+        g.addEventListener('keydown', ev => {
+          if (ev.key === 'Enter' || ev.key === ' ') {
+            ev.preventDefault();
+            selectTech(selected === n.name ? null : n.name);
+          }
+        });
+
+        // dragging
+        g.addEventListener('pointerdown', ev => {
+          dragging = n;
+          n.wasDragged = false;
+          svg.classList.add('dragging');
+          svg.setPointerCapture(ev.pointerId);
+        });
+      });
+
+      svg.addEventListener('pointermove', ev => {
+        if (!dragging) return;
+        const rect = svg.getBoundingClientRect();
+        dragging.x = ev.clientX - rect.left;
+        dragging.y = ev.clientY - rect.top;
+        dragging.vx = dragging.vy = 0;
+        dragging.wasDragged = true;
+        if (reducedMotion) graphRender();  // static mode still updates on drag
+      });
+      svg.addEventListener('pointerup', () => {
+        dragging = null;
+        svg.classList.remove('dragging');
+      });
+    }
+
+    function projectsUsing(tech) {
+      return projectCards.filter(card =>
+        card.dataset.tech.split(',').map(s => s.trim()).includes(tech));
+    }
+
+    function selectTech(name) {
+      selected = name;
+      gNodes.forEach(n => n.el.classList.toggle('selected', n.name === name));
+      gEdges.forEach(e =>
+        e.el.classList.toggle('lit', !!name && (e.a.name === name || e.b.name === name)));
+
+      const hits = name ? projectsUsing(name) : [];
+      projectCards.forEach(card =>
+        card.classList.toggle('graph-hit', hits.includes(card)));
+      document.body.classList.toggle('graph-filtering', !!name);
+
+      if (name) {
+        resultChip.textContent = `${name} → ${hits.length} project${hits.length === 1 ? '' : 's'}`;
+        resultBar.classList.add('show');
+      } else {
+        resultBar.classList.remove('show');
+      }
+    }
+
+    clearBtn.addEventListener('click', () => selectTech(null));
+
+    function graphPhysics() {
+      const REPULSION = 5200, SPRING = 0.012, SPRING_LEN = 105,
+            CENTER = 0.012, DAMP = 0.86;
+
+      for (let i = 0; i < gNodes.length; i++) {
+        const a = gNodes[i];
+        if (a === dragging) continue;
+        let fx = 0, fy = 0;
+        for (let j = 0; j < gNodes.length; j++) {
+          if (i === j) continue;
+          const b = gNodes[j];
+          let dx = a.x - b.x, dy = a.y - b.y;
+          let d2 = dx * dx + dy * dy || 1;
+          const f = REPULSION / d2;
+          const d = Math.sqrt(d2);
+          fx += (dx / d) * f;
+          fy += (dy / d) * f;
+        }
+        fx += (gW / 2 - a.x) * CENTER;
+        fy += (gH / 2 - a.y) * CENTER;
+        a.vx = (a.vx + fx * 0.05) * DAMP;
+        a.vy = (a.vy + fy * 0.05) * DAMP;
+      }
+
+      gEdges.forEach(({ a, b }) => {
+        const dx = b.x - a.x, dy = b.y - a.y;
+        const d = Math.sqrt(dx * dx + dy * dy) || 1;
+        const f = (d - SPRING_LEN) * SPRING;
+        const ux = dx / d, uy = dy / d;
+        if (a !== dragging) { a.vx += ux * f; a.vy += uy * f; }
+        if (b !== dragging) { b.vx -= ux * f; b.vy -= uy * f; }
+      });
+
+      gNodes.forEach(n => {
+        if (n === dragging) return;
+        n.x = Math.max(n.r + 30, Math.min(gW - n.r - 30, n.x + n.vx));
+        n.y = Math.max(n.r + 22, Math.min(gH - n.r - 14, n.y + n.vy));
+      });
+    }
+
+    function graphRender() {
+      gEdges.forEach(({ a, b, el }) => {
+        el.setAttribute('x1', a.x); el.setAttribute('y1', a.y);
+        el.setAttribute('x2', b.x); el.setAttribute('y2', b.y);
+      });
+      gNodes.forEach(n =>
+        n.el.setAttribute('transform', `translate(${n.x},${n.y})`));
+    }
+
+    function graphLoop() {
+      if (graphVisible && !reducedMotion) {
+        graphPhysics();
+        graphRender();
+      }
+      requestAnimationFrame(graphLoop);
+    }
+
+    // only simulate while the graph is on screen
+    new IntersectionObserver(entries => {
+      graphVisible = entries[0].isIntersecting;
+    }, { threshold: 0.05 }).observe(svg);
+
+    graphInit();
+    if (reducedMotion) {
+      // settle the layout once, then render a static (still clickable) graph
+      for (let i = 0; i < 260; i++) graphPhysics();
+      graphRender();
+    } else {
+      graphLoop();
+    }
+
+    let graphResizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(graphResizeTimer);
+      graphResizeTimer = setTimeout(() => {
+        const keep = selected;
+        graphInit();
+        selectTech(keep);
+        if (reducedMotion) {
+          for (let i = 0; i < 260; i++) graphPhysics();
+          graphRender();
+        }
+      }, 200);
+    });
+
+    /* ============================================================
+       4. SCROLL REVEAL
        ============================================================ */
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(entries => {
@@ -554,8 +902,7 @@
 
     reveals.forEach(el => observer.observe(el));
 
-    /* stagger grid children */
-    document.querySelectorAll('.projects-grid, .skills-layout, .extra-grid').forEach(grid => {
+    document.querySelectorAll('.projects-grid, .extra-grid').forEach(grid => {
       grid.querySelectorAll('.reveal').forEach((el, i) => {
         el.style.transitionDelay = `${i * 70}ms`;
       });
