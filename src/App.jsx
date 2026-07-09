@@ -3,7 +3,6 @@ import useTheme from './hooks/useTheme';
 import Nav from './components/Nav';
 import ScrollProgress from './components/ScrollProgress';
 import Hero from './components/Hero';
-import StatsStrip from './components/StatsStrip';
 import About from './components/About';
 import Timeline from './components/Timeline';
 import Projects from './components/Projects';
@@ -29,7 +28,6 @@ export default function App() {
 
       <main>
         <Hero />
-        <StatsStrip />
         <About />
         <Timeline />
         <Projects />
