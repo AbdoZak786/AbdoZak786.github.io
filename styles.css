@@ -695,3 +695,116 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ============================================================
+   FEATURED PROJECT CARD — Sentinel ETL (full-width, top of grid)
+   ============================================================ */
+
+.project-featured {
+  grid-column: 1 / -1; /* only matters if inside a grid, but we place it above the grid */
+  margin-bottom: 1rem;
+  padding: 2.2rem 2.4rem;
+  background: var(--surface);
+  border: 1px solid var(--border-md);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* subtle maroon left accent always visible on featured */
+.project-featured::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--maroon);
+  border-radius: 3px 0 0 3px;
+}
+
+.project-featured:hover {
+  border-color: rgba(110,30,30,0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px var(--shadow);
+}
+
+/* two-column layout: text left, diagram right */
+.featured-inner {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (max-width: 760px) {
+  .featured-inner {
+    grid-template-columns: 1fr;
+  }
+  .featured-diagram { display: none; }
+}
+
+.featured-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.featured-badge {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  color: var(--maroon);
+  background: rgba(110,30,30,0.07);
+  border: 1px solid rgba(110,30,30,0.2);
+  padding: 3px 10px;
+  border-radius: 3px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.featured-name {
+  font-family: var(--display);
+  font-size: 1.5rem !important;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.15rem;
+}
+
+.featured-tagline {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+}
+
+.featured-text .project-desc {
+  font-size: 13.5px;
+  max-width: 580px;
+  margin-bottom: 1rem;
+}
+
+.featured-tags { margin-bottom: 1.2rem; }
+
+.featured-github {
+  display: inline-flex;
+  width: fit-content;
+  font-size: 13px;
+}
+
+/* diagram container — clip and centre the SVG */
+.featured-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.2rem;
+}
+
+.featured-diagram svg {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+}
