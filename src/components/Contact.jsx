@@ -13,11 +13,24 @@ export default function Contact({ onSubmitted }) {
 
   const handleChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const [status, setStatus] = useState('idle'); // idle | sending | error
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // No backend wired up yet — this just confirms the form works client-side.
-    onSubmitted();
-    setForm({ name: '', email: '', message: '' });
+    setStatus('sending');
+    try {
+      const res = await fetch('https://formspree.io/f/mrewwldr', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(e.target),
+      });
+      if (!res.ok) throw new Error('Request failed');
+      onSubmitted();
+      setForm({ name: '', email: '', message: '' });
+      setStatus('idle');
+    } catch (err) {
+      setStatus('error');
+    }
   };
 
   return (
@@ -79,10 +92,16 @@ export default function Contact({ onSubmitted }) {
           </div>
           <button
             type="submit"
-            className="mt-1 inline-flex items-center justify-center gap-2 rounded-md border border-accent bg-accent px-6 py-3 text-[13px] font-semibold text-[color:var(--on-accent)] shadow-glow transition-transform hover:-translate-y-0.5"
+            disabled={status === 'sending'}
+            className="mt-1 inline-flex items-center justify-center gap-2 rounded-md border border-accent bg-accent px-6 py-3 text-[13px] font-semibold text-[color:var(--on-accent)] shadow-glow transition-transform hover:-translate-y-0.5 disabled:opacity-60"
           >
-            Send message <Send size={14} />
+            {status === 'sending' ? 'Sending…' : 'Send message'} <Send size={14} />
           </button>
+          {status === 'error' && (
+            <p className="text-[12.5px] text-red-400">
+              Something went wrong sending that — try emailing me directly below instead.
+            </p>
+          )}
         </form>
 
         <p className="mt-8 font-mono text-[12px] text-muted">
