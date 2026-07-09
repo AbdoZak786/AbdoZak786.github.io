@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Sparkles } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { GithubIcon } from './BrandIcons';
 import { projects } from '../data';
 
@@ -41,30 +41,30 @@ function ProjectCard({ p, index }) {
         ))}
       </div>
 
-      <div className="flex items-center gap-4 border-t border-line pt-4">
-        <a
-          href={p.demo || '#'}
-          onClick={(e) => { if (!p.demo) e.preventDefault(); }}
-          aria-disabled={!p.demo}
-          className={`inline-flex items-center gap-1.5 text-[12.5px] font-medium ${
-            p.demo ? 'text-ink hover:text-accent' : 'cursor-not-allowed text-muted'
-          }`}
-        >
-          <ExternalLink size={14} /> Live Demo
-        </a>
-        <a
-          href={p.github || '#'}
-          target={p.github ? '_blank' : undefined}
-          rel="noopener noreferrer"
-          onClick={(e) => { if (!p.github) e.preventDefault(); }}
-          aria-disabled={!p.github}
-          className={`inline-flex items-center gap-1.5 text-[12.5px] font-medium ${
-            p.github ? 'text-ink hover:text-accent' : 'cursor-not-allowed text-muted'
-          }`}
-        >
-          <GithubIcon size={14} /> Source Code
-        </a>
-      </div>
+      {(p.demo || p.github) && (
+        <div className="flex items-center gap-4 border-t border-line pt-4">
+          {p.demo && (
+            
+              href={p.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-[12.5px] font-medium text-ink hover:text-accent"
+            >
+              <ExternalLink size={14} /> Live Demo
+            </a>
+          )}
+          {p.github && (
+            
+              href={p.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-[12.5px] font-medium text-ink hover:text-accent"
+            >
+              <GithubIcon size={14} /> Source Code
+            </a>
+          )}
+        </div>
+      )}
     </motion.div>
   );
 }
