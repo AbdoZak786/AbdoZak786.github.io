@@ -8,18 +8,17 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/abdoali-zakir-08b739249/',
   github: 'https://github.com/abdoali-zakir',
   resume: '/Abdoali_Zakir_Resume.pdf',
-  bio: `Full-stack software engineer specialising in scalable data systems and applied ML —
+  bio: `Full-stack software engineer specialising in scalable data systems and applied ML
 shipping production pipelines from a Neo4j financial crime knowledge graph at TCS to an
 enterprise ETL platform with self-healing data quality built on Medallion Architecture.
 Delivered measurable impact across the stack: cut manual workflows by 30%, boosted automated
 test coverage by 45%, and uncovered 12+ critical vulnerabilities through systematic fuzzing.
 Currently driving citation-link prediction research at UNSW using heterogeneous graph neural
-networks, while supporting data-driven sponsorship analytics at Futures Sport & Entertainment
-(IPG Omnicom).`,
+networks, while supporting data-driven sponsorship analytics at Futures Sport & Entertainment.`,
   stats: [
     { num: "Dec '26", label: 'Graduating' },
-    { num: '3', label: 'Internships' },
-    { num: '8+', label: 'Projects' },
+    { num: '2', label: 'Internships' },
+    { num: '5+', label: 'Projects' },
     { num: 'ETL · GNN', label: 'Specialisation' },
   ],
 };
