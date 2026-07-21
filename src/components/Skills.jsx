@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Gamepad2 } from 'lucide-react';
 import { skills, CAT_COLORS } from '../data';
 import TechGraph from './TechGraph';
 
@@ -41,7 +42,7 @@ function SkillBar({ skill, index }) {
   );
 }
 
-export default function Skills() {
+export default function Skills({ onPlayGame }) {
   return (
     <section id="skills" className="mx-auto max-w-6xl px-4 py-24 sm:px-8">
       <motion.p
@@ -99,6 +100,34 @@ export default function Skills() {
       >
         <TechGraph />
       </motion.div>
+
+      <motion.button
+        type="button"
+        onClick={onPlayGame}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.4 }}
+        variants={fadeUp}
+        whileHover={{ y: -3 }}
+        className="group mt-6 flex w-full items-center justify-between gap-4 rounded-xl border border-lineMd bg-surface p-6 text-left transition-colors hover:border-accent/50 sm:p-7"
+      >
+        <div className="flex items-center gap-4">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-line bg-surface2 text-accent transition-transform group-hover:scale-110">
+            <Gamepad2 size={20} />
+          </span>
+          <div>
+            <div className="font-display text-base font-semibold text-ink">
+              Think you can type faster than my code runs?
+            </div>
+            <p className="mt-1 text-[13px] text-mid">
+              Type Fighter — a keyboard-combat game I built. Speed-type sentences to land hits on the CPU. Three difficulties.
+            </p>
+          </div>
+        </div>
+        <span className="whitespace-nowrap rounded-md border border-accent bg-accent px-4 py-2 text-[13px] font-semibold text-[color:var(--on-accent)] shadow-glow">
+          Play now
+        </span>
+      </motion.button>
     </section>
   );
 }

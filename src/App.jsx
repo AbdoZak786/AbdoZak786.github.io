@@ -11,10 +11,12 @@ import Extras from './components/Extras';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Toast from './components/Toast';
+import GameModal from './components/GameModal';
 
 export default function App() {
   const { theme, setTheme } = useTheme();
   const [toast, setToast] = useState(false);
+  const [gameOpen, setGameOpen] = useState(false);
 
   const showToast = () => {
     setToast(true);
@@ -31,13 +33,14 @@ export default function App() {
         <About />
         <Timeline />
         <Projects />
-        <Skills />
+        <Skills onPlayGame={() => setGameOpen(true)} />
         <Extras />
         <Contact onSubmitted={showToast} />
       </main>
 
       <Footer />
       <Toast show={toast} message="Message sent — I'll get back to you soon." />
+      <GameModal open={gameOpen} onClose={() => setGameOpen(false)} />
     </div>
   );
 }

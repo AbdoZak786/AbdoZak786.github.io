@@ -8,7 +8,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/abdoali-zakir-08b739249/',
   github: 'https://github.com/abdoali-zakir',
   resume: '/Abdoali_Zakir_Resume.pdf',
-  bio: `Full-stack software engineer specialising in scalable data systems and applied ML
+  bio: `Full-stack software engineer specialising in scalable data systems and applied ML —
 shipping production pipelines from a Neo4j financial crime knowledge graph at TCS to an
 enterprise ETL platform with self-healing data quality built on Medallion Architecture.
 Delivered measurable impact across the stack: cut manual workflows by 30%, boosted automated
@@ -33,7 +33,6 @@ export const experience = [
     bullets: [
       'Joined the Data Analytics team supporting data-driven sponsorship and audience insight work across sport and entertainment clients.',
       'Working across data collection, cleaning, and analysis to support client-facing reporting and insight generation, three days per week through the internship period.',
-      'Supporting client-facing reporting and communication for sponsorship and audience insight projects, translating data findings into business impact for sport and entertainment clients.',
     ],
   },
   {
@@ -48,7 +47,7 @@ export const experience = [
     ],
   },
   {
-    title: 'Software Developer',
+    title: 'Data and Automation Developer',
     company: 'Enigma Technical Society',
     date: 'Sep 2023 – May 2024',
     bullets: [
@@ -67,7 +66,7 @@ export const projects = [
     tagline: 'Self-Healing Data Pipeline Platform',
     date: 'Jun 2026 · Personal',
     featured: true,
-    desc: 'Enterprise-grade ETL platform built on Medallion Architecture (Bronze / Silver / Gold layers) automatically ingests, validates, repairs, and transforms datasets end-to-end. The self-healing engine detects and remediates missing values, duplicates, schema drift, and type mismatches at runtime, with full audit logging and data lineage tracking.',
+    desc: 'Enterprise-grade ETL platform built on Medallion Architecture (Bronze / Silver / Gold layers) — automatically ingests, validates, repairs, and transforms datasets end-to-end. The self-healing engine detects and remediates missing values, duplicates, schema drift, and type mismatches at runtime, with full audit logging and data lineage tracking.',
     tags: ['Python', 'FastAPI', 'Next.js', 'TypeScript', 'DuckDB', 'PostgreSQL', 'Docker', 'GitHub Actions'],
     github: 'https://github.com/abdoali-zakir/Sentinal_ETL',
     demo: null,
@@ -193,19 +192,19 @@ export const techEdges = [
 export const techToProjects = {
   Python: ['Sentinel ETL', 'Citation Prediction — CDCHGN', 'Automated Testing & Fuzzing Framework'],
   TypeScript: ['Sentinel ETL', 'TerraCast'],
-  FastAPI: ['Sentinel ETL', 'TerraCast'],
+  FastAPI: ['Sentinel ETL'],
   'Next.js': ['Sentinel ETL', 'TerraCast'],
-  React: ['TOOHAK', 'TerraCast', 'Sentinel ETL'],
-  'Express.js': ['TOOHAK', 'TerraCast', 'Sentinel ETL'],
-  'Node.js': ['Cloud Invoice Backend API', 'TerraCast', 'Sentinel ETL'],
+  React: ['TOOHAK'],
+  'Express.js': ['TOOHAK'],
+  'Node.js': ['Cloud Invoice Backend API'],
   PyTorch: ['Citation Prediction — CDCHGN'],
-  Pytest: ['Automated Testing & Fuzzing Framework', 'TerraCast', 'Sentinel ETL'],
+  Pytest: ['Automated Testing & Fuzzing Framework'],
   AWS: ['TerraCast', 'Cloud Invoice Backend API'],
-  Docker: ['Sentinel ETL', 'Cloud Invoice Backend API', 'TerraCast'],
-  'GitHub Actions': ['Sentinel ETL', 'TerraCast', 'Cloud Invoice Backend API', 'Financial Crime Detection(TCS)'],
-  PostgreSQL: ['Sentinel ETL', 'Cloud Invoice Backend API', 'Financial Crime Detection(TCS)'],
+  Docker: ['Sentinel ETL', 'Cloud Invoice Backend API'],
+  'GitHub Actions': ['Sentinel ETL'],
+  PostgreSQL: ['Sentinel ETL', 'Cloud Invoice Backend API'],
   DuckDB: ['Sentinel ETL'],
-  Neo4j: ['Citation Prediction — CDCHGN', 'Financial Crime Detection(TCS)'],
+  Neo4j: ['Citation Prediction — CDCHGN'],
   GNN: ['Citation Prediction — CDCHGN'],
 };
 
